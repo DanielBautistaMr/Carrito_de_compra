@@ -25,10 +25,10 @@ require_once('./php/component.php')
     <div class="container">
         <div class="row text-center py-5">
             <?php
-            component();
-            component();
-            component();
-            component();
+            component("avion" , 100, "./img/avion.png" , "Avion de juguete");
+            component("jug" , 50, "./img/jug.png" , "jug");
+            component("peluche" , 350, "./img/peluche.png", "Peluche bonito");
+            component("robot" , 4000, "./img/robot.png", "Robot asesino");
 
             ?>
 
