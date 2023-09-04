@@ -1,6 +1,6 @@
 <?php
 
-function component($productname, $productprice, $productimg, $productid)
+function component($productname, $productprice, $productimg,  $productdescription, $productid)
 {
     $element = "
     
@@ -20,7 +20,7 @@ function component($productname, $productprice, $productimg, $productid)
                                 <i class=\"far fa-star\"></i>
                             </h6>
                             <p class=\"card-text\">
-                                Some quick example text to build on the card.
+                                $productdescription
                             </p>
                             <h5>
                                 <small><s class=\"text-secondary\">$519</s></small>

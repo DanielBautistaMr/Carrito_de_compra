@@ -1,7 +1,11 @@
 <?php
+require_once('./php/CreateDb.php');
+require_once('./php/component.php');
 
-require_once('./php/component.php')
-    ?>
+// crear una instancia en la base de datos
+$database = new CreateDb("Productdb", "ProductosF");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,11 +29,10 @@ require_once('./php/component.php')
     <div class="container">
         <div class="row text-center py-5">
             <?php
-            component("avion" , 100, "./img/avion.png" , "Avion de juguete");
-            component("jug" , 50, "./img/jug.png" , "jug");
-            component("peluche" , 350, "./img/peluche.png", "Peluche bonito");
-            component("robot" , 4000, "./img/robot.png", "Robot asesino");
-
+                $result = $database->getData();
+                while ($row = mysqli_fetch_assoc($result)){
+                    component($row['product_name'], $row['product_price'], $row['product_image'], $row['product_description'], $row['id']);
+                }
             ?>
 
         </div>

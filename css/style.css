@@ -1,10 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-img{
+img {
     max-width: 100%;
     height: auto;
     background: lightblue;
@@ -12,6 +12,6 @@ img{
 }
 
 .fa-star,
-.fa-star-half{
+.fa-star-half {
     padding: 3% 0;
 }
