@@ -63,7 +63,7 @@ if (isset($_POST['remove'])){
                             }
                         }
                     } else {
-                        echo "<h5>Cart is Empty</h5>";
+                        echo "<h5>El carrito se encuentra vacio!</h5>";
                     }
 
                     ?>
@@ -87,14 +87,14 @@ if (isset($_POST['remove'])){
                             <?php
                             if (isset($_SESSION['cart'])) {
                                 $count  = count($_SESSION['cart']);
-                                echo "<h6>Precio ($count items)</h6>";
+                                echo "<h6>Precio de los items en el carrito ($count items)</h6>";
                             } else {
-                                echo "<h6>Precio (0 Elementos)</h6>";
+                                echo "<h6>El carrito se encuentra vacio</h6>";
                             }
                             ?>
-                            <h6>Costo Envio</h6>
+                            <h6>Costos Envio</h6>
                             <hr>
-                            <h6><b>Impuestos</b></h6>
+                            <h6><b>Total con impuestos</b></h6>
 
                         </div>
                         <div class="col-md-6">
@@ -102,7 +102,7 @@ if (isset($_POST['remove'])){
                             <h6 class="text-success">GRATIS</h6>
                             <hr>
                             <h6>$<?php
-                                    echo $total;
+                                    echo $total*1.19;
                                     ?></h6>
                         </div>
                     </div>
