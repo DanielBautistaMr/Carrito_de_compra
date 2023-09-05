@@ -50,7 +50,7 @@ img {
 }
 
 .price-details h6{
-    padding: 3% 2%;
+    padding: 8% 2%;
 }
 
 .cart-items {
@@ -58,6 +58,8 @@ img {
     padding-bottom: 8px !important;
 }
 
+
 .col-md-7{
-    padding-right: 30px;
+    padding-right: 40px;
 }
+

@@ -5,6 +5,18 @@ require_once("./php/CreateDb.php");
 require_once("./php/component.php");
 
 $db = new CreateDb("Productdb", "ProductosF");
+
+if (isset($_POST['remove'])){
+    if ($_GET['action'] == 'remove'){
+        foreach ($_SESSION['cart'] as $key => $value){
+            if($value["product_id"] == $_GET['id']){
+                unset($_SESSION['cart'][$key]);
+                echo "<script>alert('El producto fue eliminado')</script>";
+                echo "<script>window.location = 'cart.php'</script>";
+            }
+        }
+    }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,14 +87,15 @@ $db = new CreateDb("Productdb", "ProductosF");
                             <?php
                             if (isset($_SESSION['cart'])) {
                                 $count  = count($_SESSION['cart']);
-                                echo "<h6>Price ($count items)</h6>";
+                                echo "<h6>Precio ($count items)</h6>";
                             } else {
-                                echo "<h6>Price (0 items)</h6>";
+                                echo "<h6>Precio (0 Elementos)</h6>";
                             }
                             ?>
                             <h6>Costo Envio</h6>
                             <hr>
-                            <h6>Impuestos</h6>
+                            <h6><b>Impuestos</b></h6>
+
                         </div>
                         <div class="col-md-6">
                             <h6>$<?php echo $total; ?></h6>
