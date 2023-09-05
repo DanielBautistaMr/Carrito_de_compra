@@ -42,5 +42,22 @@ img {
 }
 
 .shopping-cart{
-    padding:5% 0;
+    padding:3% 0;
+}
+
+.cart-items + .cart-items{
+    padding: 2% 0;
+}
+
+.price-details h6{
+    padding: 3% 2%;
+}
+
+.cart-items {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+}
+
+.col-md-7{
+    padding-right: 30px;
 }
