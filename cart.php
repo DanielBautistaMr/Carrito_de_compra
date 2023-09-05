@@ -87,11 +87,13 @@ if (isset($_POST['remove'])){
                             <?php
                             if (isset($_SESSION['cart'])) {
                                 $count  = count($_SESSION['cart']);
-                                echo "<h6>Precio ($count items)</h6>";
+                                echo "<h6>Precio    ($count items)</h6>";
                             } else {
                                 echo "<h6>El carrito se encuentra vacio</h6>";
                             }
                             ?>
+                            <h6>Impuestos</h6>
+
                             <h6>Costos Envio</h6>
                             <hr>
                             <h6><b>Total con impuestos</b></h6>
@@ -99,6 +101,10 @@ if (isset($_POST['remove'])){
                         </div>
                         <div class="col-md-6">
                             <h6>$<?php echo $total; ?></h6>
+                            <h6 style=" color:gray"><small>$<?php 
+                                    
+                                    echo $total*0.19;
+                                    ?> </small> </h6>
                             <h6 class="text-success">GRATIS</h6>
                             <hr class="cor">
                             <h6>$<?php
