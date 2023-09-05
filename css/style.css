@@ -33,3 +33,10 @@ img {
 .price-details h6{
     padding: 3% 2%;
 }
+
+.img-fluid{
+    height: 300px;
+    width: 300px;
+    max-width: 100%;
+    object-fit: cover;
+}
