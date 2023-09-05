@@ -16,7 +16,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="mr-auto"></div>
             <div class="navbar-nav">
                 <a href="cart.php" class="nav-item nav-link active">

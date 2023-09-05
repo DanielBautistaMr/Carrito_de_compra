@@ -23,7 +23,6 @@ function component($productname, $productprice, $productimg,  $productdescriptio
                                 $productdescription
                             </p>
                             <h5>
-                                <small><s class=\"text-secondary\">$519</s></small>
                                 <span class=\"price\">$$productprice</span>
                             </h5>
 
