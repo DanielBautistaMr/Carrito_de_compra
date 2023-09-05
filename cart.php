@@ -6,17 +6,17 @@ require_once("./php/component.php");
 
 $db = new CreateDb("Productdb", "ProductosF");
 
-if (isset($_POST['remove'])){
-    if ($_GET['action'] == 'remove'){
-        foreach ($_SESSION['cart'] as $key => $value){
-            if($value["product_id"] == $_GET['id']){
+if (isset($_POST['remove'])) {
+    if ($_GET['action'] == 'remove') {
+        foreach ($_SESSION['cart'] as $key => $value) {
+            if ($value["product_id"] == $_GET['id']) {
                 unset($_SESSION['cart'][$key]);
                 echo "<script>alert('El producto fue eliminado')</script>";
                 echo "<script>window.location = 'cart.php'</script>";
             }
         }
     }
-  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,56 +78,43 @@ if (isset($_POST['remove'])){
             </div>
 
             <div class="col-md-4 offset-md-1 border rounded mt-5 bg-white h-25">
-
                 <div class="pt-4">
                     <h6>Detalles de la compra</h6>
                     <hr>
                     <div class="row price-details">
                         <div class="col-md-6">
-                            <?php
-                            if (isset($_SESSION['cart'])) {
-                                $count  = count($_SESSION['cart']);
-                                echo "<h6>Precio    ($count items)</h6>";
-                            } else {
-                                echo "<h6>El carrito se encuentra vacio</h6>";
-                            }
-                            ?>
+                            <!-- Otros detalles de la compra aquí -->
+                            <h6>Total </h6>
                             <h6>Impuestos</h6>
-
-                            <h6>Costos Envio</h6>
+                            <h6>Costos Envío</h6>
                             <hr>
                             <h6><b>Total con impuestos</b></h6>
-
                         </div>
                         <div class="col-md-6">
-                            <h6>$<?php echo $total; ?></h6>
-                            <h6 style=" color:gray"><small>$<?php 
-                                    
-                                    echo $total*0.19;
-                                    ?> </small> </h6>
+                            <!-- Muestra el total aquí -->
+                            <h6 id="total-price">$<?php echo $total; ?></h6>
+                            <h6 id="tax-price">$<?php echo $total * 0.19; ?></h6>
                             <h6 class="text-success">GRATIS</h6>
-                            <hr class="cor">
-                            <h6>$<?php
-                                    echo $total*1.19;
-                                    ?></h6>
+                            <hr>
+                            <h6 id="total-with-tax">$<?php echo $total * 1.19; ?></h6>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </div>
+
+
+
+
         </div>
+    </div>
 
 
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 </body>
 
 </html>
